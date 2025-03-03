@@ -1,0 +1,28 @@
+plugins {
+    id 'java'
+    id 'org.springframework.boot' version '3.4.2'
+}
+
+group = 'de.wthack.mcp.steam'
+version = '1.0-SNAPSHOT'
+
+repositories {
+    mavenCentral()
+    maven { url 'https://repo.spring.io/milestone' }
+    maven { url 'https://repo.spring.io/snapshot' }
+}
+
+dependencies {
+    implementation "org.springframework.ai:spring-ai-mcp-server-spring-boot-starter:1.0.0-M6"
+    implementation 'com.lukaspradel:steam-web-api:1.9.1'
+    implementation 'com.google.guava:guava:33.4.0-jre'
+    implementation "org.json:json:20240303"
+    testImplementation platform('org.junit:junit-bom:5.10.0')
+    testImplementation 'org.junit.jupiter:junit-jupiter'
+}
+
+test {
+    useJUnitPlatform()
+}
+
+apply plugin: 'io.spring.dependency-management'
